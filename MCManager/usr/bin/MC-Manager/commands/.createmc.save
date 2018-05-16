@@ -1,0 +1,233 @@
+#!/bin/bash
+
+choosetype(){
+ echo "Please enter the server type {CraftBukkit|SpigotMC|BungeeCord}"
+ read TYPE
+ if ! [[ "$TYPE" == "CraftBukkit" || "$TYPE" == "SpigotMC" || "$TYPE" == "BungeeCord" ]]; then
+  wrongchoosetype
+ else
+  echo "Server type set to [$TYPE]"
+  choosever
+ fi
+}
+
+choosever(){
+ echo "Please enter the sever version {1.7.10|1.8|1.8.8|1.9|1.9.4|1.10|1.10.2|1.11|1.11.2|1.12|1.12.2}"
+ read VER
+ if ! [[ ( ( "$VER" == 1.7.10 ) || ( "$VER" == 1.8 ) || ( "$VER" == 1.8.8 ) || ( "$VER" == 1.9 ) || ( "$VER" == 1.9.4 ) || ( "$VER" == 1.10 ) || ( "$VER" == 1.10.2 ) || ( "$VER" == 1.11 ) || ( "$VER" == 1.11.2 ) || ( "$VER" == 1.12 ) || ( "$VER" == 1.12.2 ) ) ]]; then
+  wrongchoosever
+ fi
+ echo "Server version set to [$VER]"
+}
+
+wrongchoosetype(){
+ echo "Wrong option [$TYPE]"
+ echo ""
+ choosetype
+}
+
+wrongchoosever(){
+ echo "Wrong option [$VER]"
+ echo ""
+ choosever
+}
+
+if [[ $# -eq 0 ]]; then
+ echo "Internal Error: Cannot Create [args==0]"
+ echo "Please contact C0d0Type23#1915 on Discord to resolve this problem"
+ exit 0
+fi
+
+mainselector(){
+ if [ "$TYPE" == "CraftBukkit" ]
+ then
+  if [[ ( "$VER" == 1.7.10 ) ]]
+  then
+   cd /usr/bin/MC-Manager/commands/jars/CraftBukkit/
+   ./craftbukkit-1.7.10.inst $MIN $MAX $1
+  fi
+  if [[ ( "$VER" == 1.8 ) ]]
+  then
+   cd /usr/bin/MC-Manager/commands/jars/CraftBukkit/
+   ./root craftbukkit-1.8.inst $MIN $MAX $1
+  fi
+  if [[ ( "$VER" == 1.8.8 ) ]]
+  then
+   cd /usr/bin/MC-Manager/commands/jars/CraftBukkit/
+   ./craftbukkit-1.8.8.inst $MIN $MAX $1
+  fi
+  if [[ ( "$VER" == 1.9 ) ]]
+  then
+   cd /usr/bin/MC-Manager/commands/jars/CraftBukkit/
+   ./craftbukkit-1.9.inst $MIN $MAX $1
+  fi
+  if [[ ( "$VER" == 1.9.4 ) ]]
+  then
+   cd /usr/bin/MC-Manager/commands/jars/CraftBukkit/
+   ./craftbukkit-1.9.4.inst $MIN $MAX $1
+  fi
+  if [[ ( "$VER" == 1.10 ) ]]
+  then
+   cd /usr/bin/MC-Manager/commands/jars/CraftBukkit/
+   ./craftbukkit-1.10.inst $MIN $MAX $1
+  fi
+  if [[ ( "$VER" == 1.10.2 ) ]]
+  then
+   cd /usr/bin/MC-Manager/commands/jars/CraftBukkit/
+   ./craftbukkit-1.10.2.inst $MIN $MAX $1
+  fi
+  if [[ ( "$VER" == 1.11 ) ]]
+  then
+   cd /usr/bin/MC-Manager/commands/jars/CraftBukkit/
+   ./craftbukkit-1.11.inst $MIN $MAX $1
+  fi
+  if [[ ( "$VER" == 1.11.2 ) ]]
+  then
+   cd /usr/bin/MC-Manager/commands/jars/CraftBukkit/
+   ./craftbukkit-1.11.2.inst $MIN $MAX $1
+  fi
+  if [[ ( "$VER" == 1.12 ) ]]
+  then
+   cd /usr/bin/MC-Manager/commands/jars/CraftBukkit/
+   ./craftbukkit-1.12.inst $MIN $MAX $1
+  fi
+  if [[ ( "$VER" == 1.12.2 ) ]]
+  then
+   cd /usr/bin/MC-Manager/commands/jars/CraftBukkit/
+   ./craftbukkit-1.12.2.inst $MIN $MAX $1
+  fi
+ fi
+ if [ "$TYPE" == "SpigotMC" ]
+ then
+  if [[ ( "$VER" == 1.7.10 ) ]]
+  then
+   cd /usr/bin/MC-Manager/commands/jars/SpigotMC/
+   ./spigot-1.7.10.inst $MIN $MAX $1
+  fi
+  if [[ ( "$VER" == 1.8 ) ]]
+  then
+   cd /usr/bin/MC-Manager/commands/jars/SpigotMC/
+   ./spigot-1.8.inst $MIN $MAX $1
+  fi
+  if [[ ( "$VER" == 1.8.8 ) ]]
+  then
+   cd /usr/bin/MC-Manager/commands/jars/SpigotMC/
+   ./spigot-1.8.8.inst $MIN $MAX $1
+  fi
+  if [[ ( "$VER" == 1.9 ) ]]
+  then
+   cd /usr/bin/MC-Manager/commands/jars/SpigotMC/
+   ./spigot-1.9.inst $MIN $MAX $1
+  fi
+  if [[ ( "$VER" == 1.9.4 ) ]]
+  then
+   cd /usr/bin/MC-Manager/commands/jars/SpigotMC/
+   ./spigot-1.9.4.inst $MIN $MAX $1
+  fi
+  if [[ ( "$VER" == 1.10 ) ]]
+  then
+   cd /usr/bin/MC-Manager/commands/jars/SpigotMC/
+   ./spigot-1.10.inst $MIN $MAX $1
+  fi
+  if [[ ( "$VER" == 1.10.2 ) ]]
+  then
+   cd /usr/bin/MC-Manager/commands/jars/SpigotMC/
+   ./spigot-1.10.2.inst $MIN $MAX $1
+  fi
+  if [[ ( "$VER" == 1.11 ) ]]
+  then
+   cd /usr/bin/MC-Manager/commands/jars/SpigotMC/
+   ./spigot-1.11.inst $MIN $MAX $1
+  fi
+  if [[ ( "$VER" == 1.11.2 ) ]]
+  then
+   cd /usr/bin/MC-Manager/commands/jars/SpigotMC/
+   ./spigot-1.11.2.inst $MIN $MAX $1
+  fi
+  if [[ ( "$VER" == 1.12 ) ]]
+  then
+   cd /usr/bin/MC-Manager/commands/jars/SpigotMC/
+   ./spigot-1.12.inst $MIN $MAX $1
+  fi
+  if [[ ( "$VER" == 1.12.2 ) ]]
+  then
+   cd /usr/bin/MC-Manager/commands/jars/SpigotMC/
+   ./spigot-1.12.2.inst $MIN $MAX $1
+  fi
+ fi
+ if [ "$TYPE" == "BungeeCord" ]
+ then
+  if [[ ( "$VER" == 1.7.10 ) ]]
+  then
+   cd /usr/bin/MC-Manager/commands/jars/BungeeCord/
+   ./bungeecord-1.7.10.inst $MIN $MAX $1
+  fi
+  if [[ ( "$VER" == 1.8 ) ]]
+  then
+   cd /usr/bin/MC-Manager/commands/jars/BungeeCord/
+   ./bungeecord-1.8+.inst $MIN $MAX $1
+  fi
+  if [[ ( "$VER" == 1.8.8 ) ]]
+  then
+   cd /usr/bin/MC-Manager/commands/jars/BungeeCord/
+   ./bungeecord-1.8+.inst $MIN $MAX $1
+  fi
+  if [[ ( "$VER" == 1.9 ) ]]
+  then
+   cd /usr/bin/MC-Manager/commands/jars/BungeeCord/
+   ./bungeecord-1.8+.inst $MIN $MAX $1
+  fi
+  if [[ ( "$VER" == 1.9.4 ) ]]
+  then
+   cd /usr/bin/MC-Manager/commands/jars/BungeeCord/
+   ./bungeecord-1.8+.inst $MIN $MAX $1
+  fi
+  if [[ ( "$VER" == 1.10 ) ]]
+  then
+   cd /usr/bin/MC-Manager/commands/jars/BungeeCord/
+   ./bungeecord-1.8+.inst $MIN $MAX $1
+  fi
+  if [[ ( "$VER" == 1.10.2 ) ]]
+  then
+   cd /usr/bin/MC-Manager/commands/jars/BungeeCord/
+   ./bungeecord-1.8+.inst $MIN $MAX $1
+  fi
+  if [[ ( "$VER" == 1.11 ) ]]
+  then
+   cd /usr/bin/MC-Manager/commands/jars/BungeeCord/
+   ./bungeecord-1.8+.inst $MIN $MAX $1
+  fi
+  if [[ ( "$VER" == 1.11.2 ) ]]
+  then
+   cd /usr/bin/MC-Manager/commands/jars/BungeeCord/
+   ./bungeecord-1.8+.inst $MIN $MAX $1
+  fi
+  if [[ ( "$VER" == 1.12 ) ]]
+  then
+   cd /usr/bin/MC-Manager/commands/jars/BungeeCord/
+   ./bungeecord-1.8+.inst $MIN $MAX $1
+  fi
+  if [[ ( "$VER" == 1.12.2 ) ]]
+  then
+   cd /usr/bin/MC-Manager/commands/jars/BungeeCord/
+   ./bungeecord-1.8+.inst $MIN $MAX $1
+  fi
+ fi
+}
+
+
+if [[ $# -gt 0 ]]; then
+ echo "Server Name set to [$1]"
+ echo ""
+ echo "Please enter the Minimum RAM allocation in Mo"
+ read MIN
+ echo "Minimum RAM allocation set to ${MIN}Mo"
+ echo ""
+ echo "Please enter the Maximum RAM allocation in Mo"
+ read MAX
+ echo "Maximum RAM allocation set to ${MAX}Mo"
+ echo ""
+ choosetype
+ mainselector $1
+ exit 0
+fi
